@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to Do</title>
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+
+<body>
+
+    <div class="png-block1"></div>
+    <header>
+        <marquee behavior="alternate" direction="right" class="logoText">to Do</marquee>
+        <img src="/media/logo todo pacman.png" class="logoPng">
+        <select class="themeSelector">
+            
+        </select>
+    </header>
+
+    <main>
+        <div class="main-block-left">
+            <div class="container">
+                <div class="fieldsCards">
+                    <div class="">
+                        <input class="titleInput" placeholder="Введите заголовок">   
+                    </div>
+
+                    <div class="categoryContainer">
+                        <select class="categorySelect">
+                            <option>Выберите категорию</option>
+                        </select>
+
+                        <button class="addCategoryBtn">Создать</button>
+                    </div>
+                    
+                    <div>
+                        <textarea class="descriptionInput"  placeholder="Введите описание" rows="5"></textarea>
+                    </div>
+                    <div class="btn">
+                        <button class="addBtn" onclick="enableAutoplay()" onmousedown="viewDiv()" type="button">Создать</button>   
+                    </div>       
+                </div>
+            </div>
+        </div>
+        <div class="main-block-right">
+            <div class="todos"></div>
+        </div>
+    </main>
+
+    <!-- Modal window for creating category -->
+    <div class="modal" id="modal">
+    <div class="modal-container">
+        <div class="close-btn-container">
+        <img 
+            src="/media/x-mark.png"
+            alt="Close btn"
+            class="close-btn"
+        >
+        </div>
+
+        <h1>Создание категории</h1>
+
+        <div class="createCategoryForm">
+        <div>
+            <input class="createCategoryInput" placeholder="Название категории">
+        </div>
+
+        <div>
+            <button class="createCategoryBtn">Создать</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/theme.js"></script>
+    <script src="/scripts/modal.js"></script>
+</body>
+
+</html>

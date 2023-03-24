@@ -1,0 +1,418 @@
+@font-face { 
+    font-family: 'mario'; 
+    src: url('/media/PressStart2P-vaV7.ttf') format('woff2'), 
+         url('/media/PressStart2P-vaV7.ttf')  format('truetype'),
+         url('/media/PressStart2P-vaV7.ttf') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+  }
+
+@font-face { 
+    font-family: 'Covid19'; 
+    src: url('/media/Covid19.ttf') format('woff2'), 
+        url('/media/Covid19.ttf')  format('truetype'),
+        url('/media/Covid19.ttf') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+@font-face { 
+    font-family: 'pacman'; 
+    src: url('/media/PAC-FONT.TTF') format('woff2'), 
+        url('/media/PAC-FONT.TTF')  format('truetype'),
+        url('/media/PAC-FONT.TTF') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+
+
+.mario {
+    --background-main: url(/media/background001.jpg) center/cover fixed;
+    --font: 'mario';
+    --block: block;
+    --option-color: rgb(0, 0, 0);
+    --none: none;
+    --boreder: 3px dashed #ffffff;
+    --font-color: ;
+    --color: #fff;
+    --font-select: 'mario';
+    --placeholder-color: #fff;
+    --border-radius-select: 0px;
+    --btn-border: 3px outset white;
+    --card-color: rgba(255, 255, 255, 0.0);
+    --card-boxshadow: none;
+    --card-border: 3px dashed #ffffff;
+    --card-btn-fontsize: 10px;
+    --card-fontsize-p: 10px;
+    --card-btn: 10px;
+    --modal-background: rgba(255, 255, 255, .8);
+    --modal-h1: black;
+    --modal-btn-borser: 3px outset rgba(0, 0, 0, .8);
+    --modal-input-text: black;
+    --modal-input-border: 3px dashed #000000;
+}
+
+.pacman {
+    --background-main: url(/media/pacmanwallpaper.jpg) center/cover fixed;
+    --font: 'Covid19';
+    --block: none;
+    --option-color: #2450c3;
+    --none: block;
+    --boreder: 3px solid rgb(216, 10, 10);
+    --font-color: rgb(216, 168, 10);
+    --color:  rgb(216, 168, 10);
+    --placeholder-color: rgba(216, 168, 10, 0.9);
+    --font-select: 'pacman';
+    --border-radius-select: 10px;
+    --btn-border: 3px outset rgb(216, 10, 10);
+    --card-color: #2450c3;
+    --card-boxshadow: 0px 0px 40px 0px #2450c3;
+    --card-border: none;
+    --card-btn-fontsize: 15px;
+    --card-fontsize-p: 15px;
+    --card-btn: 15px;
+    --modal-background: #2450c3;
+    --modal-h1: rgb(216, 168, 10);
+    --modal-btn-borser: 3px outset rgb(216, 10, 10);
+    --modal-input-text: rgb(216, 168, 10);
+    --modal-input-border: 3px solid rgb(216, 10, 10);
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font);
+    background: var(--background-main);
+}
+
+
+header {
+    width: 100%;
+    height: 10vh;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+option {
+    background-color: var( --option-color);
+}
+
+.themeSelector {
+    width: 150px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: var(--boreder);
+    font-family: var(--font-select);
+    border-radius: var(--border-radius-select) ;
+    color: var(--font-color);
+}
+
+marquee {
+    color: white;
+    font-size: 30px;
+}
+
+.logoText {
+    display: var(--block);
+}
+
+.logoPng {
+    display: var(--none);
+}
+
+main .container{
+    width: 80%;
+    padding: 20px;
+    /* border: 3px dashed #ffffff; */
+    border-radius: 15px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(234, 245, 255, 0.1);
+}
+
+main {
+    display: flex;
+}
+
+.main-block-left {
+    width: 35%;
+    height: 90vh;
+    z-index: 99;
+}
+
+
+
+
+main .container .input {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* --------------------main block left----------------- */
+
+input {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    background: transparent;
+    border: var(--boreder);
+    font-family: var(--font); 
+    color: var(--color);
+    border-radius: var(--border-radius-select);
+}
+
+input::placeholder {
+    color: var(--placeholder-color);
+    font-family: var(--font);
+}
+
+.categoryContainer {
+    display: flex;
+}
+
+.categorySelect {
+    margin-right: 10px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    background: transparent;
+    border: var(--boreder);
+    font-family: var(--font); 
+    color: var(--color);
+    border-radius: var(--border-radius-select);
+}
+
+.addCategoryBtn {
+    height: 40px;
+}
+
+
+textarea {
+    width: 100%;
+    background: transparent;
+    border: var(--boreder);
+    margin-bottom: 20px;
+    font-family: var(--font); 
+    color: var(--color);
+    border-radius: var(--border-radius-select);
+}
+
+textarea::placeholder {
+    color: var(--placeholder-color);
+    font-family: var(--font);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background: transparent;
+    border: var(--btn-border) ;
+    border-radius: var(--border-radius-select);
+    width: 130px;
+    height: 30px;
+    font-family: var(--font);
+    color: var(--color);
+}
+/* ------------------------main block right------------------------ */
+.main-block-right {
+    width: 75%;
+    z-index: 99;
+}
+
+.todos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.todoCard {
+    width: 30%;
+    border: var(--card-border); 
+    padding: .7rem; 
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 10px;
+    margin-bottom: 20px;
+    color: var(--color);
+    background-color: var(--card-color);
+    box-shadow: var(--card-boxshadow);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.todoCard h2 {
+    margin: 0;
+    text-shadow: 0px 0px 5px black;
+}
+
+.todoCard p {
+    text-shadow: 0px 0px 5px black;
+    line-height: 20px;
+    font-size: var(--card-fontsize-p);
+    /* text-decoration: line-through; */
+}
+
+.btn-todo {
+    width: 100px;
+    font-size: var(--card-btn-fontsize);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.descriptionContainer {
+    height: 200px;
+}
+
+.descriptionContainer p {
+    margin-top: 10px;
+}
+
+.shorten {
+    overflow: auto;
+    height: 200px;
+}
+
+.error {
+    border: 3px dashed red;
+    outline: red;
+}
+
+.card-btn {
+    width: 100px;
+    font-size: var(--card-btn);
+}
+
+/* .btn-reg {
+    margin: 5px 0;
+    font-size: 8px;
+    text-shadow: 0px 0px 5px black;
+    cursor: pointer;
+} */
+
+.completed {
+    text-decoration: line-through;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.dates {
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    margin: 5px 0;
+}
+
+/* ---------------------------- MODAL -------------------------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal-container {
+    background-color: var(--modal-background);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    animation-name: openModal;
+    animation-duration: .5s;
+    box-shadow: var(--card-boxshadow);
+}
+
+.modal-container h1 {
+    margin: 0 0 15px 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--modal-h1);
+}
+
+.createCategoryInput {
+    border: var(--modal-input-border);
+    color: var(--modal-input-text);
+}
+
+.createCategoryInput::placeholder {
+    color: var(--modal-input-text);
+}
+
+.createCategoryBtn {
+    color: var(--font-color);
+    border: var(--modal-btn-borser);
+    cursor: pointer;
+}
+
+.close-btn-container {
+    width: 100%;
+    text-align: right;
+}
+
+.close-btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.close-btn:hover {
+    opacity: 0.5;
+}
+
+@keyframes openModal {
+    from {
+    opacity: 0;
+    transform: scale(.5);
+    }
+
+    to {
+    opacity: 1;
+    transform: scale(1);
+    }
+}
+
+
+.createCategoryForm div {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+
+
+.createCategoryInput {
+    width: 100%;
+    height: 30px;
+}
+
